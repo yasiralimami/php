@@ -12,15 +12,25 @@
 		$tableBody .= "</tr>";				//End this row
 	} 
 	
+if (isset($_POST['middleName'] ) && $_POST['middleName'] != ""){ return;
+																
+																
+																}
+	
+	else {
+	
 	
 	//Method 2.  This method pulls the individual name-value pairs from the $_POST using the name
 	//as the key in an associative array.  
 	
 	$inFirstName = $_POST["firstName"];		//Get the value entered in the first name field
-	$inLastName = $_POST["lastName"];		//Get the value entered in the last name field
+    $inLastName = $_POST["lastName"];		//Get the value entered in the last name field
 	$inSchool = $_POST["school"];			//Get the value entered in the school field
 	$inwdvClass = $_POST["wdvClass"];
-
+    $inMajor =$_POST["radio1"];
+    $inTeachType =$_POST["checkbox1"];
+    $inTeachType1 =$_POST["checkbox2"];
+		
 ?>
 < html>
 
@@ -50,7 +60,8 @@
 <p>First Name: <?php echo $inFirstName; ?></p>
 <p>Last Name: <?php echo $inLastName; ?></p>
 <p>Class Name: <?php echo $inwdvClass; ?></p>
-
+<p>Major Name:<?php echo $inMajor; ?></p>
+<p>Teach Type:<?php echo $inTeachType."<br/>".$inTeachType1; }?></p>
 </body>
 
 </html>
