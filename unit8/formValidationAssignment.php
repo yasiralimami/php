@@ -81,12 +81,12 @@ if( isset($_POST['submit'])  )				//if the form has been submitted Validate the 
 	//pull data from the POST variables in order to validate their values
 	$inName = $_POST['inName'];
 	$inSocial = $_POST['inSocial'];
+	$inRadio = $_POST['inRadio'];
+	
 	if (!isset($_POST['inRadio'])){
         
         $radioErrMsg = "Choose a Response to submit";
 	}
-    global $inRadio;
-    
         
 	$validForm = true;					//Set form flag/switch to true.  Assumes a valid form so far
 	
@@ -187,27 +187,32 @@ try {
   <table width="587" border="0">
     <tr>
       <td width="117">Name:</td>
-      <td width="246"><input type="text" name="inName" id="inName" size="40" value=""/></td>
+      <td width="246"><input type="text" name="inName" id="inName" size="40" value="<?php echo "$inName" ?>"/></td>
       <td width="210" class="error"><?php echo "$nameErrMsg"; //place error message on form  ?></td>
     </tr>
     <tr>
       <td>Social Security</td>
-      <td><input type="text" name="inSocial" id="inSocial" size="40" value="" /></td>
+      <td><input type="text" name="inSocial" id="inSocial" size="40" value="<?php echo "$inSocial" ?>" /></td>
       <td class="error"><?php echo "$socialErrMsg"; //place error message on form  ?></td>
     </tr>
     <tr>
       <td>Choose a Response</td>
       <td><p>
+        
+              
         <label>
-          <input type="radio" name="inRadio" id="inRadio_0" value="phone">
+          <input type="radio" name="inRadio" id="inRadio_0" value="phone"
+          <?php if($inRadio == "phone"){ echo "checked"; } ?>>
           Phone</label>
         <br>
         <label>
-          <input type="radio" name="inRadio" id="inRadio_1" value="email">
+          <input type="radio" name="inRadio" id="inRadio_1" value="email"
+          <?php if($inRadio == "email"){ echo "checked"; } ?>>
           Email</label>
         <br>
         <label>
-          <input type="radio" name="inRadio" id="inRadio_2" value="US Mail">
+          <input type="radio" name="inRadio" id="inRadio_2" value="US Mail"
+          <?php if($inRadio == "US Mail"){ echo "checked"; } ?>>
           US Mail</label>
         <br>
       </p></td>
