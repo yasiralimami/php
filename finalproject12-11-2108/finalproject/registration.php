@@ -220,7 +220,7 @@ function validateAboutMe( $inAboutMe ) {
 	$statusMsg = '';
 	if(isset($_POST['g-recaptcha-response']) && !empty($_POST['g-recaptcha-response']))
      {
-        $secretKey  = "6Lfzi3MUAAAAAKQ1sRukiWmpfwkD6wBbpa5Vz5bC";
+        $secretKey  = "6Lfzi3MUABbpa5Vz5bC";
         $verifyResponse = file_get_contents('https://www.google.com/recaptcha/api/siteverify?secret='.$secretKey.'&response='.$_POST['g-recaptcha-response']);
         $responseData = json_decode($verifyResponse);
         if($responseData->success)
@@ -390,7 +390,7 @@ catch(PDOException $e)
 							<div class="col-sm-9">
 							<label for="" class="col-sm-4 control-label"></label>
 							<!-- Google reCAPTCHA widget -->
-							  <div style="margin:5px;" name ="g-captcha-response"  class=" col-sm-4 g-recaptcha" data-sitekey="6Lfzi3MUAAAAAGxBbzGmu54a9G1Exca-7VlZdXtJ"></div>
+							  <div style="margin:5px;" name ="g-captcha-response"  class=" col-sm-4 g-recaptcha" data-sitekey="6Lf1Exca-7VlZdXtJ"></div>
 							  <div class="col-sm-12">
 							  <label for="" class="col-sm-4 control-label"></label>
 							  <div class=" col-sm-8"><span><?php echo $statusMsg;?></span> </div> 
