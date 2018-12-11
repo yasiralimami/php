@@ -98,7 +98,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	$statusMsg = '';
 	if(isset($_POST['g-recaptcha-response']) && !empty($_POST['g-recaptcha-response']))
      {
-        $secretKey  = "6Lfzi3MUAAAAAKQ1sRukiWmpfwkD6wBbpa5Vz5bC";
+        $secretKey  = "6Lfzi3MUAAAAAKQ1sRuwBbpa5Vz5bC";
         $verifyResponse = file_get_contents('https://www.google.com/recaptcha/api/siteverify?secret='.$secretKey.'&response='.$_POST['g-recaptcha-response']);
         $responseData = json_decode($verifyResponse);
         if($responseData->success)
@@ -121,7 +121,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $comment =test_input($_POST['comment']);
 			$date = date('Y-m-d h:i:s');
 			//Try database class 
-			$db= new Database("localhost","yasir_cms_system","yasir_3","@try@123@!@#");
+			$db= new Database("localhost","system","ya_3","@!@#");
 			$params = array(':Name'=> $name,':Email'=> $email,':Subject'=> $subject,':Comment'=> $comment,':Date'=> $date );
             $sql ="INSERT INTO comments (name, email, subject, comment, date) VALUES (:Name,:Email,:Subject,:Comment,:Date)";
 
@@ -217,7 +217,7 @@ catch(PDOException $e)
 							<div class="col-sm-8">
 							<label for="" class="col-sm-3 control-label"></label>
 							<!-- Google reCAPTCHA widget -->
-     <div style="margin:5px;" name ="g-captcha-response"  class=" col-sm-2 g-recaptcha" data-sitekey="6Lfzi3MUAAAAAGxBbzGmu54a9G1Exca-7VlZdXtJ"></div>
+     <div style="margin:5px;" name ="g-captcha-response"  class=" col-sm-2 g-recaptcha" data-sitekey="6Lfzi3MUABbzGmu54a9G1Exca-7VlZdXtJ"></div>
       <div class="col-sm-8">
       <label for="" class="col-sm-4 control-label"></label>
     <div class=" col-sm-8"><span><?php echo $statusMsg;?></span> </div> 
